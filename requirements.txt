@@ -1,0 +1,7 @@
+google-genai
+python-dotenv
+ezdxf
+matplotlib
+Pillow
+# cadquery は pip ではなく conda または miniforge でのインストールが推奨されます。
+# 例: conda install -c cadquery -c conda-forge cadquery

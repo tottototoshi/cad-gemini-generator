@@ -30,20 +30,12 @@ def main():
             result = subprocess.run(
                 [sys.executable, "main.py", dxf_path],
                 check=True,
-                capture_output=True,
-                text=True,
-                encoding="utf-8",
-                errors="replace",
                 env=env
             )
             print(f"[{i}/{len(dxf_files)}] 成功: {dxf_path}")
             success_count += 1
-            print(result.stdout)
         except subprocess.CalledProcessError as e:
             print(f"[{i}/{len(dxf_files)}] 失敗 (エラーコード {e.returncode}): {dxf_path}")
-            print("--- エラー出力 ---")
-            print(e.stderr if e.stderr else e.stdout)
-            print("------------------")
             fail_count += 1
         except Exception as e:
             print(f"[{i}/{len(dxf_files)}] 予期せぬエラー: {dxf_path}\n{e}")
